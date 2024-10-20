@@ -147,9 +147,9 @@ def CubicEquation(a, b, c, d):
             x3 = 2 * manual_sqrt(-p / 3) * manual_cos((theta + 4 * pi) / 3) - b / (3 * a)
             return round(x1, 6), round(x2, 6), round(x3, 6)
 
-a = float(input("a: "))
-b = float(input("b: "))
-c = float(input("c: "))
-d = float(input("d: "))
+# a = float(input("a: "))
+# b = float(input("b: "))
+# c = float(input("c: "))
+# d = float(input("d: "))
 
-print(CubicEquation(a, b, c, d))
+# print(CubicEquation(a, b, c, d))
