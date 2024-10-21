@@ -1,4 +1,4 @@
-from Matrix import Matrix
+from matrix import Matrix
 from CubicEquation import CubicEquation
 from EigenSolver import get_char_polynomial_coefs, get_eigenvectors
 

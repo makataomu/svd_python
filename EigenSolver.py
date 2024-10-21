@@ -1,7 +1,7 @@
 # god bless mrs. Mukash
 from typing import List
 
-from Matrix import Matrix
+from matrix import Matrix
 
 def identity_matrix(n: int) -> Matrix:
     """Create an identity matrix of size n x n."""
