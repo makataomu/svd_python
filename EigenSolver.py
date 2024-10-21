@@ -120,8 +120,6 @@ def find_eigenvector(A: Matrix, lambd: float) -> List[float]:
     if independent_rows == identity_matrix(A.num_rows).data:
         return None
     
-    print(independent_rows)
-    
     eigenvector = extract_eigenvector_from_rref(independent_rows)
     eigenvectors = [eigenvector] # might be more than 1 if we add eigenvec_from_zero
     

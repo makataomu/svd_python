@@ -110,7 +110,7 @@ class MatrixOperations:
         self.create_input_window("Eigenvalues & Eigenvectors", self.display_eigen)
 
     def display_eigen(self):
-        matrix = Matrix([[float(entry.get()) for entry in row] for row in self.eigen_matrix_entries])
+        matrix = Matrix([[float(entry.get()) for entry in row] for row in self.matrix_a_entries])
         c3, c2, c1, c0 = get_char_polynomial_coefs(matrix)
         eigenvalues = CubicEquation(c3, c2, c1, c0)
         eigenvectors = get_eigenvectors(matrix, eigenvalues)
@@ -184,9 +184,9 @@ class Menu:
         Button(frame_menu, text="Inverse Matrix", **button_style, command=operations.inverse_matrix).pack(pady=10)
         Button(frame_menu, text="Multiply Matrices", **button_style, command=operations.multiply_matrices).pack(pady=10)
         Button(frame_menu, text="Transpose Matrix", **button_style, command=operations.transpose_matrix).pack(pady=10)
-        Button(frame_menu, text="Trace Matrix", **button_style, command=operations.trace_matrix).pack(pady=10)
+        # Button(frame_menu, text="Trace Matrix", **button_style, command=operations.trace_matrix).pack(pady=10)
         Button(frame_menu, text="Determinant", **button_style, command=operations.determinant_matrix).pack(pady=10)
-        Button(frame_menu, text="Minor Matrix", **button_style, command=operations.minor_matrix).pack(pady=10)
+        # Button(frame_menu, text="Minor Matrix", **button_style, command=operations.minor_matrix).pack(pady=10)
         Button(frame_menu, text="Cofactor Matrix", **button_style, command=operations.cofactor_matrix).pack(pady=10)
         Button(frame_menu, text="Scalar Multiply", **button_style, command=operations.scalar_multiply).pack(pady=10)
         Button(frame_menu, text="Eigenvalues & Vectors", **button_style, command=operations.eigenvalues_vectors).pack(pady=10)
