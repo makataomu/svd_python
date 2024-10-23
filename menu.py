@@ -30,7 +30,7 @@ class MatrixOperations:
         self.create_input_window("Inverse Matrix", self.display_inverse)
 
     def display_inverse(self):
-        matrix = Matrix([[float(entry.get()) for entry in self.inverse_matrix_entries]])
+        matrix = Matrix([[float(entry.get()) for entry in row] for row in self.matrix_a_entries])
         try:
             inverse_matrix = matrix.inverse()
             result = "Inverse of Matrix:\n" + '\n'.join([' '.join(map(str, row)) for row in inverse_matrix.data])
