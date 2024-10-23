@@ -97,7 +97,7 @@ class MatrixOperations:
         self.display_result(result)
 
     def scalar_multiply(self):
-        self.create_input_window("Scalar Multiply", self.display_scalar_multiply)
+        self.create_input_window("Scalar Multiply", self.display_scalar_multiply, scalar_multiply=True)
 
     def display_scalar_multiply(self):
         scalar = float(self.scalar_entry.get())
@@ -120,10 +120,10 @@ class MatrixOperations:
             result += ' '.join(map(str, vector)) + "\n"
         self.display_result(result)
 
-    def create_input_window(self, title, operation_callback, dual_matrices=False):
+    def create_input_window(self, title, operation_callback, dual_matrices=False, scalar_multiply=False):
         self.gui_input = Tk()
         self.gui_input.title(title)
-        self.gui_input.geometry("400x450" if not dual_matrices else "600x450")
+        self.gui_input.geometry("400x500" if not dual_matrices else "600x450")
         self.gui_input.resizable(False, False)
         self.gui_input.configure(bg="#f5f5f5")  
 
@@ -154,6 +154,11 @@ class MatrixOperations:
                     entry.grid(row=i + 2, column=j + 3, padx=5, pady=5)
                     row_entries.append(entry)
                 self.matrix_b_entries.append(row_entries)
+
+        if scalar_multiply:
+            Label(self.frame_input, text="Scalar Value", font=("Helvetica", 12), bg="#f5f5f5").grid(row=5, column=0, padx=5, pady=10)
+            self.scalar_entry = Entry(self.frame_input, width=10, font=("Helvetica", 12), bd=2)
+            self.scalar_entry.grid(row=5, column=1, padx=5, pady=10)
 
         Label(self.frame_input, text="Results:", font=("Helvetica", 12, "bold"), bg="#f5f5f5").grid(row=6, column=0, columnspan=4, pady=10)
         self.result_text = Text(self.frame_input, height=8, width=40, font=("Helvetica", 12), bg="#e8f4f8", fg="#333")
